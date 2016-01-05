@@ -1,57 +1,57 @@
 [
     {
         "path": "/home/anmol/bin", 
-        "fileId": "0Bw239KLrN7zoXzU5Ql9xcm1QdEE", 
+        "fileId": "0Bw239KLrN7zoczlKNkdCNWZmbWc", 
         "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk"
     }, 
     {
         "path": "/home/anmol/Documents", 
-        "fileId": "0Bw239KLrN7zocGZQZFlOVElXTzQ", 
+        "fileId": "0Bw239KLrN7zocDFkVGg4N3Y5eE0", 
         "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk"
     }, 
     {
         "path": "/home/anmol/.config", 
-        "fileId": "0Bw239KLrN7zocVJrYWFJU2dTWDQ", 
+        "fileId": "0Bw239KLrN7zoYmZ6dDBsVmRFd1U", 
         "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk"
     }, 
     {
         "path": "/home/anmol/cpp-options.txt", 
-        "fileId": "0Bw239KLrN7zocjBEWW5RQTVPaFk", 
+        "fileId": "0Bw239KLrN7zoVDZMSVdTNmttQm8", 
         "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk"
     }, 
     {
         "path": "/home/anmol/.astylerc", 
-        "fileId": "0Bw239KLrN7zod2Vma0szQVVtY1E", 
+        "fileId": "0Bw239KLrN7zoMnYwV2gySXFoYlk", 
         "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk"
     }, 
     {
         "path": "/home/anmol/.bash_aliases", 
-        "fileId": "0Bw239KLrN7zobFNrWWotMHdjU00", 
+        "fileId": "0Bw239KLrN7zocEoyejFWMl8wYm8", 
         "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk"
     }, 
     {
         "path": "/home/anmol/.gitconfig", 
-        "fileId": "0Bw239KLrN7zoU21NcENlQ0FCLUE", 
+        "fileId": "0Bw239KLrN7zoRDVXWU5nWWFRM0U", 
         "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk"
     }, 
     {
         "path": "/home/anmol/auto-backup-temp/manually_installed_apps.txt", 
-        "fileId": "0Bw239KLrN7zoejlyTUFNenpOUjQ", 
+        "fileId": "0Bw239KLrN7zoRk83NVUzeDY5dU0", 
         "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk"
     }, 
     {
         "path": "/home/anmol/auto-backup-temp/snapshot", 
-        "fileId": "0Bw239KLrN7zoRXZiZC1fYnFuX3c", 
+        "fileId": "0Bw239KLrN7zoOE15YzN6ZmFDWnM", 
         "parentId": "0Bw239KLrN7zoQ2VPaVRvdVpIamM"
     }, 
     {
         "path": "/media/Data/anmol/Docs/To-do/To-do.txt", 
-        "fileId": "0Bw239KLrN7zoSm9hUTY0NjJmcDA", 
+        "fileId": "0Bw239KLrN7zoODYtMC1ndWRGdm8", 
         "parentId": "0Bw239KLrN7zocDhXQmpVMjdwVFU"
     }, 
     {
         "path": "/media/Data/anmol/Docs/To-do/To-do-soon.txt", 
-        "fileId": "0Bw239KLrN7zoYXhfTVF0MHlYYXc", 
+        "fileId": "0Bw239KLrN7zobTFuUkNsZ0l2a2M", 
         "parentId": "0Bw239KLrN7zocDhXQmpVMjdwVFU"
     }
 ]

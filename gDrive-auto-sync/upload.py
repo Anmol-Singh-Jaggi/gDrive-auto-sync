@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 from __future__ import print_function
 
-from apiclient.http import MediaFileUpload
-from api_boilerplate import file_service
-
 import os
 import sys
 import json
 import subprocess
+import hashlib
+
+from apiclient.http import MediaFileUpload
+from api_boilerplate import file_service
 
 
 def file_exists(fileId):
@@ -77,7 +78,7 @@ def list_files():
     '''
 
     results = file_service.list(
-        pageSize=10, fields="files(id, name)").execute()
+        pageSize=10, fields="files(id, name, md5Checksum)").execute()
 
     return results
 
@@ -96,6 +97,27 @@ def update_or_create_file(input_file):
         return update_file(file_path, fileId)
     else:
         return create_file(file_path, parentId=parentId)
+
+
+def is_file_modified(input_file):
+    '''
+    Returns True if the contents of the input file on local storage
+    are different from that on its drive counterpart, False otherwise.
+    It does this by comparing their hash values.
+    '''
+
+    file_path = input_file['path']
+    fileId = input_file['fileId']
+
+    if not file_exists(fileId):
+        return True
+
+    local_file_hash = hashlib.md5(open(file_path, 'rb').read()).hexdigest()
+
+    remote_file_hash = file_service.get(
+        fileId=fileId, fields="md5Checksum").execute()['md5Checksum']
+
+    return local_file_hash != remote_file_hash
 
 
 def archive_directory(dir_path):
@@ -131,11 +153,12 @@ def main():
 
         # Creating a backup object to prevent changing
         # 'dir_path' to 'dir_path.tar.xz' in the output file
-        input_file_bak = dict(input_file)
-        input_file_bak['path'] = file_path
+        input_file_new = dict(input_file)
+        input_file_new['path'] = file_path
 
-        results = update_or_create_file(input_file_bak)
-        input_file['fileId'] = results['id']
+        if is_file_modified(input_file_new):
+            results = update_or_create_file(input_file_new)
+            input_file['fileId'] = results['id']
 
         # Delete the archive file
         if os.path.isdir(input_file['path']):
