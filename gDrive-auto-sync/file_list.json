@@ -1,0 +1,57 @@
+[
+    {
+        "path": "/home/anmol/bin", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
+        "fileId": "0Bw239KLrN7zoXzU5Ql9xcm1QdEE"
+    }, 
+    {
+        "path": "/home/anmol/Documents", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
+        "fileId": "0Bw239KLrN7zocGZQZFlOVElXTzQ"
+    }, 
+    {
+        "path": "/home/anmol/.config", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
+        "fileId": "0Bw239KLrN7zocVJrYWFJU2dTWDQ"
+    }, 
+    {
+        "path": "/home/anmol/cpp-options.txt", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
+        "fileId": "0Bw239KLrN7zocjBEWW5RQTVPaFk"
+    }, 
+    {
+        "path": "/home/anmol/.astylerc", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
+        "fileId": "0Bw239KLrN7zod2Vma0szQVVtY1E"
+    }, 
+    {
+        "path": "/home/anmol/.bash_aliases", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
+        "fileId": "0Bw239KLrN7zobFNrWWotMHdjU00"
+    }, 
+    {
+        "path": "/home/anmol/.gitconfig", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
+        "fileId": "0Bw239KLrN7zoU21NcENlQ0FCLUE"
+    }, 
+    {
+        "path": "/home/anmol/auto-backup-temp/manually_installed_apps.txt", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
+        "fileId": "0Bw239KLrN7zoejlyTUFNenpOUjQ"
+    }, 
+    {
+        "path": "/home/anmol/auto-backup-temp/snapshot", 
+        "parentId": "0Bw239KLrN7zoQ2VPaVRvdVpIamM", 
+        "fileId": "0Bw239KLrN7zoRXZiZC1fYnFuX3c"
+    }, 
+    {
+        "path": "/media/Data/anmol/Docs/To-do/To-do.txt", 
+        "parentId": "0Bw239KLrN7zocDhXQmpVMjdwVFU", 
+        "fileId": "0Bw239KLrN7zoSm9hUTY0NjJmcDA"
+    }, 
+    {
+        "path": "/media/Data/anmol/Docs/To-do/To-do-soon.txt", 
+        "parentId": "0Bw239KLrN7zocDhXQmpVMjdwVFU", 
+        "fileId": "0Bw239KLrN7zoYXhfTVF0MHlYYXc"
+    }
+]
