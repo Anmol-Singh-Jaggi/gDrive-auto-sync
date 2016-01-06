@@ -168,7 +168,7 @@ def main():
     # Write the list to the json file again
     # as it may contain new fileId's for some files
     out_file = open(file_list_file_path, "w")
-    json.dump(file_list, out_file, indent=4)
+    json.dump(file_list, out_file, indent=4, sort_keys=True)
     out_file.close()
 
     print("Done!!")
