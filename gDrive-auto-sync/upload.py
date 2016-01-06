@@ -78,7 +78,7 @@ def list_files():
     '''
 
     results = file_service.list(
-        pageSize=10, fields="files(id, name, md5Checksum)").execute()
+        pageSize=10, fields="files(id, name)").execute()
 
     return results
 
@@ -123,6 +123,7 @@ def is_file_modified(input_file):
 def archive_directory(dir_path):
     '''
     Create an archive of the directory's contents.
+    Returns the path of the archive created.
     '''
 
     archive_path = dir_path + ".tar.xz"
@@ -152,7 +153,7 @@ def main():
             file_path = archive_directory(file_path)
 
         # Creating a backup object to prevent changing
-        # 'dir_path' to 'dir_path.tar.xz' in the output file
+        # 'dir_path' to 'dir_path.tar.xz' in the output json file
         input_file_new = dict(input_file)
         input_file_new['path'] = file_path
 
@@ -164,6 +165,8 @@ def main():
         if os.path.isdir(input_file['path']):
             os.remove(file_path)
 
+    # Write the list to the json file again
+    # as it may contain new fileId's for some files
     out_file = open(file_list_file_path, "w")
     json.dump(file_list, out_file, indent=4)
     out_file.close()
