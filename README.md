@@ -1,6 +1,6 @@
 # gDrive-auto-sync
 
-Automatically upload data to your Google Drive account at regular intervals.
+Automatically backup files to your Google Drive account periodically.
 
 **Dependencies:**
  - `pip install --upgrade google-api-python-client`
