@@ -1,3 +1,8 @@
+"""
+This module is responsible for doing all the authentication.
+Adapted from the Google API Documentation.
+"""
+
 from __future__ import print_function
 import os
 import httplib2
@@ -14,6 +19,8 @@ except ImportError:
 
 SCOPES = 'https://www.googleapis.com/auth/drive'
 CLIENT_SECRET_FILE = 'client_secret.json'
+
+# Enter your project name here!!
 APPLICATION_NAME = 'API Project'
 
 
@@ -45,6 +52,7 @@ def get_credentials():
             credentials = oauth2client.tools.run(flow, store)
         print('Storing credentials to ' + credential_path)
     return credentials
+
 
 credentials = get_credentials()
 http = credentials.authorize(httplib2.Http())

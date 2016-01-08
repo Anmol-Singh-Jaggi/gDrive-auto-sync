@@ -12,11 +12,12 @@ from api_boilerplate import file_service
 
 
 def file_exists(fileId):
-    '''
-    Returns True if the file with the given drive-id exists,
-    False otherwise.
-    '''
-
+    """
+    Checks whether a file exists on the Drive or not.
+    :param fileId: The ID of the file to check.
+    :type fileId: str
+    :returns: bool
+    """
     if not fileId:
         return False
     try:
@@ -26,19 +27,20 @@ def file_exists(fileId):
         return False
 
 
-def create_file(file_path, file_name=None, parentId=None):
-    '''
-    Insert the file located at 'file_path' with the drive-name 'file_name'
-    into the drive-directory with id 'parentId'.
-    '''
-
-    # If the input 'file_name' is None,
-    # Use the filesystem name of the file as its drive-name
-    if not file_name:
-        file_name = os.path.basename(file_path)
+def create_file(file_path, parentId=None):
+    """
+    Creates a new file on the Drive.
+    :param file_path: The path of the source file on local storage.
+    :type file_path: str
+    :param parentId: The ID of the directory in which the file has to be
+    created. If it is None, the file will be created in the root directory.
+    :type parentId: str or None
+    :returns: A dictionary containing the ID of the file created.
+    """
+    file_name = os.path.basename(file_path)
 
     mimetype = None
-    if not os.path.splitext(os.path.basename(file_path))[1]:
+    if not os.path.splitext(file_name)[1]:
         # Required for files with names like '.astylerc'
         mimetype = "text/plain"
 
@@ -54,10 +56,14 @@ def create_file(file_path, file_name=None, parentId=None):
 
 
 def update_file(file_path, fileId):
-    '''
-    Updates the file with the drive-id 'fileId'.
-    '''
-
+    """
+    Modifies an already existing file on the Drive.
+    :param file_path: The path of the source file on local storage.
+    :type file_path: str
+    :param fileId: The ID of the file to be modified.
+    :type fileId: str
+    :returns: A dictionary containing the ID of the file modified.
+    """
     mimetype = None
     if not os.path.splitext(os.path.basename(file_path))[1]:
         # Required for files with names like '.astylerc'
@@ -72,11 +78,10 @@ def update_file(file_path, fileId):
 
 
 def list_files():
-    '''
-    List some files in random order.
-    Currently not used.
-    '''
-
+    """
+    List some of the files on the Drive.
+    :returns: A dictionary containing the list of file-details.
+    """
     results = file_service.list(
         pageSize=10, fields="files(id, name)").execute()
 
@@ -84,11 +89,13 @@ def list_files():
 
 
 def update_or_create_file(input_file):
-    '''
-    Updates the file if it exists already on the drive(based on its id).
-    Creates a new one otherwise.
-    '''
-
+    """
+    Updates the file if it exists already on the Drive, else creates a new one.
+    :param input_file: A dictionary containing the details about the file.
+    The required details are 'path', 'fileId' and 'parentId'.
+    :type input_file: dict
+    :returns: A dictionary containing the details about the file.
+    """
     file_path = input_file['path']
     fileId = input_file['fileId']
     parentId = input_file['parentId']
@@ -100,12 +107,14 @@ def update_or_create_file(input_file):
 
 
 def is_file_modified(input_file):
-    '''
-    Returns True if the contents of the input file on local storage
-    are different from that on its drive counterpart, False otherwise.
+    """
+    Checks whether a file on the Drive is different from its local counterpart.
     It does this by comparing their hash values.
-    '''
-
+    :param input_file: A dictionary containing the details about the file.
+    The required details are 'path', 'fileId' and 'parentId'.
+    :type input_file: dict
+    :returns: bool
+    """
     file_path = input_file['path']
     fileId = input_file['fileId']
 
@@ -121,11 +130,12 @@ def is_file_modified(input_file):
 
 
 def archive_directory(dir_path):
-    '''
-    Create an archive of the directory's contents.
-    Returns the path of the archive created.
-    '''
-
+    """
+    Creates an archive of the directory's contents.
+    :param dir_path: The path of the directory on local storage.
+    :type dir_path: str
+    :returns: str -- The path of the archive created.
+    """
     archive_path = dir_path + ".tar.xz"
 
     # Remove the previous archive
