@@ -160,10 +160,11 @@ def main():
 
         file_path = input_file['path']
         if os.path.isdir(file_path):
+            # If it is a directory, its archive will be uploaded.
             file_path = archive_directory(file_path)
 
         # Creating a backup object to prevent changing
-        # 'dir_path' to 'dir_path.tar.xz' in the output json file
+        # 'dir_path' to 'dir_path.tar.xz' in the output json file.
         input_file_new = dict(input_file)
         input_file_new['path'] = file_path
 
@@ -171,12 +172,12 @@ def main():
             results = update_or_create_file(input_file_new)
             input_file['fileId'] = results['id']
 
-        # Delete the archive file
+        # Delete the archive file.
         if os.path.isdir(input_file['path']):
             os.remove(file_path)
 
     # Write the list to the json file again
-    # as it may contain new fileId's for some files
+    # as it may contain new fileId's for some files.
     out_file = open(file_list_file_path, "w")
     json.dump(file_list, out_file, indent=4, sort_keys=True)
     out_file.close()
