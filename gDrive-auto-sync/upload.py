@@ -23,7 +23,7 @@ def file_exists(fileId):
     try:
         file_service.get(fileId=fileId, fields="").execute()
         return True
-    except:
+    except Exception:
         return False
 
 
@@ -44,7 +44,7 @@ def create_file(file_path, parentId=None):
         # Required for files with names like '.astylerc'
         mimetype = "text/plain"
 
-    media_body = MediaFileUpload(file_path, mimetype=mimetype)
+    media_body = MediaFileUpload(file_path, mimetype)
     body = {'name': file_name}
     if parentId:
         body['parents'] = [parentId]
@@ -103,7 +103,7 @@ def update_or_create_file(input_file):
     if file_exists(fileId):
         return update_file(file_path, fileId)
     else:
-        return create_file(file_path, parentId=parentId)
+        return create_file(file_path, parentId)
 
 
 def is_file_modified(input_file):
@@ -121,10 +121,10 @@ def is_file_modified(input_file):
     if not file_exists(fileId):
         return True
 
-    local_file_hash = hashlib.md5(open(file_path, 'rb').read()).hexdigest()
-
     remote_file_hash = file_service.get(
         fileId=fileId, fields="md5Checksum").execute()['md5Checksum']
+
+    local_file_hash = hashlib.md5(open(file_path, 'rb').read()).hexdigest()
 
     return local_file_hash != remote_file_hash
 
