@@ -37,15 +37,10 @@ def create_file(file_path, parentId=None):
     :type parentId: str or None
     :returns: A dictionary containing the ID of the file created.
     """
-    file_name = os.path.basename(file_path)
+    media_body = MediaFileUpload(
+        file_path, mimetype="application/octet-stream")
 
-    mimetype = None
-    if not os.path.splitext(file_name)[1]:
-        # Required for files with names like '.astylerc'
-        mimetype = "text/plain"
-
-    media_body = MediaFileUpload(file_path, mimetype)
-    body = {'name': file_name}
+    body = {'name': os.path.basename(file_path)}
     if parentId:
         body['parents'] = [parentId]
 
@@ -64,12 +59,8 @@ def update_file(file_path, fileId):
     :type fileId: str
     :returns: A dictionary containing the ID of the file modified.
     """
-    mimetype = None
-    if not os.path.splitext(os.path.basename(file_path))[1]:
-        # Required for files with names like '.astylerc'
-        mimetype = "text/plain"
-
-    media_body = MediaFileUpload(file_path, mimetype)
+    media_body = MediaFileUpload(
+        file_path, mimetype="application/octet-stream")
 
     results = file_service.update(
         fileId=fileId, media_body=media_body, fields="id").execute()
