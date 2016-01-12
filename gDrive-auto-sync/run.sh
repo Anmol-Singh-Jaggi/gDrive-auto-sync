@@ -8,7 +8,7 @@ done
 chmod +x ./custom_cmds_pre.sh
 ./custom_cmds_pre.sh
 
-mkdir -p logs
+mkdir -p ./logs
 chmod +x ./upload.py
 ./upload.py > ./logs/$(date +%Y-%m-%d_%H-%M-%S.log) 2>&1
 
