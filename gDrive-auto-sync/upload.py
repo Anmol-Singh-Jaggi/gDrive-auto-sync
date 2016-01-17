@@ -102,13 +102,15 @@ def is_file_modified(input_file):
     Checks whether a file on the Drive is different from its local counterpart.
     It does this by comparing their hash values.
     :param input_file: A dictionary containing the details about the file.
-    The required details are 'path', 'fileId' and 'parentId'.
+    The required details(keys) are 'path' and 'fileId'.
     :type input_file: dict
     :returns: bool
     """
     file_path = input_file['path']
     fileId = input_file['fileId']
 
+    # If the file does not exist on the Drive,
+    # then return true.
     if not file_exists(fileId):
         return True
 
@@ -129,7 +131,7 @@ def archive_directory(dir_path):
     """
     archive_path = dir_path + ".tar.xz"
 
-    # Remove the previous archive
+    # Remove the previous archive if it exists
     if os.path.exists(archive_path):
         os.remove(archive_path)
 
@@ -141,9 +143,8 @@ def archive_directory(dir_path):
 def main():
     file_list_file_path = "file_list.json"
 
-    in_file = open(file_list_file_path)
-    file_list = json.load(in_file)
-    in_file.close()
+    with open(file_list_file_path) as in_file:
+        file_list = json.load(in_file)
 
     for input_file in file_list:
         print(str(input_file))
@@ -169,9 +170,8 @@ def main():
 
     # Write the list to the json file again
     # as it may contain new fileId's for some files.
-    out_file = open(file_list_file_path, "w")
-    json.dump(file_list, out_file, indent=4, sort_keys=True)
-    out_file.close()
+    with open(file_list_file_path, "w") as out_file:
+        json.dump(file_list, out_file, indent=4, sort_keys=True)
 
     print("Done!!")
 
