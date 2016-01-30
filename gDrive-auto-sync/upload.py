@@ -21,8 +21,8 @@ def file_exists(fileId):
     if not fileId:
         return False
     try:
-        file_service.get(fileId=fileId, fields="").execute()
-        return True
+        f = file_service.get(fileId=fileId, fields="").execute()
+        return not f.labels.trashed
     except Exception:
         return False
 
