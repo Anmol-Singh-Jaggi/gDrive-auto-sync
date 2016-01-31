@@ -13,7 +13,7 @@ from api_boilerplate import file_service
 
 def file_exists(fileId):
     """
-    Checks whether a file exists on the Drive or not.
+    Checks whether a file exists on the Drive and is not trashed.
     :param fileId: The ID of the file to check.
     :type fileId: str
     :returns: bool
@@ -21,13 +21,9 @@ def file_exists(fileId):
     if not fileId:
         return False
     try:
-        # Get the file metadata for trashed field 
-        # if true, then it doesn't exist in drive
-        file_metadata = file_service.get(fileId=fileId, fields="trashed").execute()
-        if (file_metadata['trashed']) == True:
-            return False
-        else:
-            return True
+        results = file_service.get(fileId=fileId, fields="trashed").execute()
+        # Return False if the file is either trashed or does not exist
+        return not results['trashed']
     except Exception:
         return False
 
