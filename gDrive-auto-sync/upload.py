@@ -21,8 +21,13 @@ def file_exists(fileId):
     if not fileId:
         return False
     try:
-        f = file_service.get(fileId=fileId, fields="trashed").execute()
-        return not (f['trashed'])
+        # Get the file metadata for trashed field 
+        # if true, then it doesn't exist in drive
+        file_metadata = file_service.get(fileId=fileId, fields="trashed").execute()
+        if (file_metadata['trashed']) == True:
+            return False
+        else:
+            return True
     except Exception:
         return False
 
