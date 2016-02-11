@@ -23,7 +23,7 @@ Automatically backup files to your Google Drive account periodically.
  - For scheduling it:
    - Modify the contents of *`crontab.txt`* as per your needs.
    - Execute `crontab -e` to open the crontab edit buffer.
-   - Copy the contents of *`crontab.txt`* in the buffer.
+   - Copy the contents of *`crontab.txt`* in the buffer and save it.
 
 **To-Do:**
  - Add support for uploading contents of a folder recursively without archiving.
