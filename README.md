@@ -3,7 +3,7 @@
 Automatically backup files to your Google Drive account periodically.
 
 **Dependencies:**
- - `pip install --upgrade google-api-python-client`
+ - `pip install google-api-python-client`
 
 **Usage:**
  - Download your *`client_secrets.json`* file from the Google Developer Console and keep it alongside the script.  
