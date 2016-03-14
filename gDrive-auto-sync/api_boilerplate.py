@@ -34,11 +34,11 @@ def get_credentials():
         Credentials, the obtained credential.
     """
     home_dir = os.path.expanduser('~')
-    credential_dir = os.path.join(home_dir, '.drive-credentials')
+    credential_dir = os.path.join(home_dir, '.gdrive-credentials')
     if not os.path.exists(credential_dir):
         os.makedirs(credential_dir)
     credential_path = os.path.join(credential_dir,
-                                   'drive-credentials.json')
+                                   'gdrive-credentials.json')
 
     store = oauth2client.file.Storage(credential_path)
     credentials = store.get()
