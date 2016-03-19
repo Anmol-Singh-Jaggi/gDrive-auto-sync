@@ -38,8 +38,7 @@ def create_file(file_path, parentId=None):
     :type parentId: str or None
     :returns: A dictionary containing the ID of the file created.
     """
-    media_body = MediaFileUpload(
-        file_path, mimetype="application/octet-stream")
+    media_body = MediaFileUpload(file_path)
 
     body = {'name': os.path.basename(file_path)}
     if parentId:
@@ -60,8 +59,7 @@ def update_file(file_path, fileId):
     :type fileId: str
     :returns: A dictionary containing the ID of the file modified.
     """
-    media_body = MediaFileUpload(
-        file_path, mimetype="application/octet-stream")
+    media_body = MediaFileUpload(file_path)
 
     results = file_service.update(
         fileId=fileId, media_body=media_body, fields="id").execute()
