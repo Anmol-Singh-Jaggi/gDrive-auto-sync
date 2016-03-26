@@ -1,62 +1,62 @@
 [
     {
-        "fileId": "0Bw239KLrN7zoSXJGRDR4THVCWlU",
-        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
+        "fileId": "0Bw239KLrN7zoSXJGRDR4THVCWlU", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
         "path": "/home/anmol/.auto-backup-temp/manually_installed_apps.txt"
-    },
+    }, 
     {
-        "fileId": "0Bw239KLrN7zoSThIMG1VMkloclU",
-        "parentId": "0Bw239KLrN7zoQ2VPaVRvdVpIamM",
+        "fileId": "0Bw239KLrN7zoSThIMG1VMkloclU", 
+        "parentId": "0Bw239KLrN7zoQ2VPaVRvdVpIamM", 
         "path": "/home/anmol/.auto-backup-temp/snapshot"
-    },
+    }, 
     {
-        "fileId": "0Bw239KLrN7zoa0VVbVN5VndsV2c",
-        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
+        "fileId": "0Bw239KLrN7zoa0VVbVN5VndsV2c", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
         "path": "/home/anmol/.auto-backup-temp/installed_ppa_list.txt"
-    },
+    }, 
     {
-        "fileId": "0Bw239KLrN7zoRTJrekUtZ1g0cUk",
-        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
+        "fileId": "0Bw239KLrN7zoRTJrekUtZ1g0cUk", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
         "path": "/home/anmol/bin"
-    },
+    }, 
     {
-        "fileId": "0Bw239KLrN7zoem1pSm4zcGhKa0U",
-        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
+        "fileId": "0Bw239KLrN7zoem1pSm4zcGhKa0U", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
         "path": "/home/anmol/Documents"
-    },
+    }, 
     {
-        "fileId": "0Bw239KLrN7zoLXpnbnFrZmpYN3M",
-        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
+        "fileId": "0Bw239KLrN7zoLXpnbnFrZmpYN3M", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
         "path": "/home/anmol/.config"
-    },
+    }, 
     {
-        "fileId": "0Bw239KLrN7zoMW5hMXpETlZiZzA",
-        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
+        "fileId": "0Bw239KLrN7zoMW5hMXpETlZiZzA", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
         "path": "/home/anmol/cpp-options.txt"
-    },
+    }, 
     {
-        "fileId": "0Bw239KLrN7zoc3A4VWc3TGNrX1k",
-        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
+        "fileId": "0Bw239KLrN7zoc3A4VWc3TGNrX1k", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
         "path": "/home/anmol/.astylerc"
-    },
+    }, 
     {
-        "fileId": "0Bw239KLrN7zoOWRPdWVMS3gwcDA",
-        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
+        "fileId": "0Bw239KLrN7zoOWRPdWVMS3gwcDA", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
         "path": "/home/anmol/.bash_aliases"
-    },
+    }, 
     {
-        "fileId": "0Bw239KLrN7zocDRSUDMtamtjLXM",
-        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
+        "fileId": "0Bw239KLrN7zocDRSUDMtamtjLXM", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
         "path": "/home/anmol/.gitconfig"
-    },
+    }, 
     {
-        "fileId": "0Bw239KLrN7zoYmxUV3luOFhvbHM",
-        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
+        "fileId": "0Bw239KLrN7zoYmxUV3luOFhvbHM", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
         "path": "/home/anmol/.xprofile"
-    },
+    }, 
     {
-        "fileId": "0Bw239KLrN7zoMDhfSC1TY3BuWjg",
-        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
+        "fileId": "0Bw239KLrN7zoMDhfSC1TY3BuWjg", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
         "path": "/home/anmol/.audacity-data/audacity.cfg"
     }
 ]
