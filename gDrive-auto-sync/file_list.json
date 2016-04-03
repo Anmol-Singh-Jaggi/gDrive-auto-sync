@@ -55,6 +55,11 @@
         "path": "/home/anmol/.xprofile"
     }, 
     {
+        "fileId": "0Bw239KLrN7zoVHNmSzhpVzNLaWc", 
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
+        "path": "/home/anmol/.bashrc"
+    }, 
+    {
         "fileId": "0Bw239KLrN7zoMDhfSC1TY3BuWjg", 
         "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk", 
         "path": "/home/anmol/.audacity-data/audacity.cfg"
