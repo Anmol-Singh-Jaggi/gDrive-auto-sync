@@ -1,7 +1,11 @@
 # Commands to be run before invoking the main script
 
 home="/home/anmol"
+
 temp_dir_path="/tmp/.auto-backup-temp"
+# Remove any existing directory
+rm -rf "${temp_dir_path}"
+# Make a fresh directory
 mkdir -p "${temp_dir_path}"
 
 # Execute directory snapshot
@@ -17,9 +21,11 @@ grep -RoPish "ppa.launchpad.net/[^/]+/[^/ ]+" /etc/apt | sort -u | sed -r 's/\.[
 mv "${home}/.config/google-chrome" "${home}/.config.google-chrome"
 
 # Archive all the .rc files in the home directory
+# Make a temporary folder to store all the rc files in one place
 rc_path="${temp_dir_path}/rc"
 mkdir -p "${rc_path}"
 # Activate the 'dotglob' option so that the wildcard '*' includes hidden files as well
 shopt -s dotglob
+# Copy the rc files in the temporary folder
 cp "${home}"/*rc "${rc_path}"
 shopt -u dotglob

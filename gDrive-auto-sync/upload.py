@@ -128,7 +128,7 @@ def archive_directory(dir_path):
     :type dir_path: str
     :returns: str -- The path of the archive created.
     """
-    archive_path = os.path.join('/tmp', dir_path + ".tar.xz")
+    archive_path = os.path.join('/tmp', os.path.basename(dir_path) + ".tar.xz")
 
     subprocess.check_call(["tar", "-caf", archive_path, "-C", dir_path, "."])
 
