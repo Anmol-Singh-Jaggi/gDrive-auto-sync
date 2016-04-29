@@ -6,6 +6,7 @@ import sys
 import json
 import subprocess
 import hashlib
+import tempfile
 
 from apiclient.http import MediaFileUpload
 from api_boilerplate import file_service
@@ -82,7 +83,7 @@ def update_or_create_file(input_file):
     """
     Updates the file if it exists already on the Drive, else creates a new one.
     :param input_file: A dictionary containing the details about the file.
-    The required details are 'path', 'fileId' and 'parentId'.
+    The required keys are 'path', 'fileId' and 'parentId'.
     :type input_file: dict
     :returns: A dictionary containing the details about the file.
     """
@@ -101,7 +102,7 @@ def is_file_modified(input_file):
     Checks whether a file on the Drive is different from its local counterpart.
     It does this by comparing their hash values.
     :param input_file: A dictionary containing the details about the file.
-    The required details(keys) are 'path' and 'fileId'.
+    The required keys are 'path' and 'fileId'.
     :type input_file: dict
     :returns: bool
     """
@@ -128,15 +129,34 @@ def archive_directory(dir_path):
     :type dir_path: str
     :returns: str -- The path of the archive created.
     """
-    archive_path = dir_path + ".tar.xz"
-
-    # Remove the previous archive if it exists
-    if os.path.exists(archive_path):
-        os.remove(archive_path)
+    archive_path = os.path.join(tempfile.gettempdir(), dir_path + ".tar.xz")
 
     subprocess.check_call(["tar", "-caf", archive_path, "-C", dir_path, "."])
 
     return archive_path
+
+
+def backup(input_file):
+    """
+    Does the job of uploading file/directory to Drive.
+    :param input_file: A dictionary containing the details about the file.
+    The required keys are 'path', 'fileId' and 'parentId'.
+    :type input_file: dict
+    :returns: None
+    """
+    file_path = input_file['path']
+
+    if os.path.isdir(file_path):
+        # If it is a directory, its archive will be uploaded.
+        input_file['path'] = archive_directory(file_path)
+
+    if is_file_modified(input_file):
+        results = update_or_create_file(input_file)
+        input_file['fileId'] = results['id']
+
+    # Restore the original 'path' to prevent it changing to
+    # '/tmp/dir_path.tar.xz' from 'dir_path' in the output json
+    input_file['path'] = file_path
 
 
 def main():
@@ -149,23 +169,7 @@ def main():
         print(str(input_file))
         sys.stdout.flush()
 
-        file_path = input_file['path']
-        if os.path.isdir(file_path):
-            # If it is a directory, its archive will be uploaded.
-            file_path = archive_directory(file_path)
-
-        # Creating a backup object to prevent changing
-        # 'dir_path' to 'dir_path.tar.xz' in the output json file.
-        input_file_new = dict(input_file)
-        input_file_new['path'] = file_path
-
-        if is_file_modified(input_file_new):
-            results = update_or_create_file(input_file_new)
-            input_file['fileId'] = results['id']
-
-        # Delete the archive file.
-        if os.path.isdir(input_file['path']):
-            os.remove(file_path)
+        backup(input_file)
 
     # Write the list to the json file again
     # as it may contain new fileId's for some files.

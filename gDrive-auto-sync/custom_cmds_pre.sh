@@ -1,6 +1,7 @@
 # Commands to be run before invoking the main script
 
-temp_dir_path="/home/anmol/.auto-backup-temp"
+home="/home/anmol"
+temp_dir_path="${home}/.auto-backup-temp"
 mkdir -p "${temp_dir_path}"
 
 # Execute directory snapshot
@@ -13,10 +14,12 @@ comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-
 grep -RoPish "ppa.launchpad.net/[^/]+/[^/ ]+" /etc/apt | sort -u | sed -r 's/\.[^/]+\//:/' > "${temp_dir_path}/installed_ppa_list.txt"
 
 # Move Google Chrome's config out due to its large size
-mv /home/anmol/.config/google-chrome /home/anmol/.config.google-chrome
+mv "${home}/.config/google-chrome" "${home}/.config.google-chrome"
 
 # Archive all the .rc files in the home directory
+rc_path="${temp_dir_path}/rc"
+mkdir rc_path
 # Activate the 'dotglob' option so that the wildcard '*' includes hidden files as well
 shopt -s dotglob
-cd /home/anmol && tar -caf "${temp_dir_path}/rc.tar.xz" *rc
+cp "${home}"/*rc "${rc_path}"
 shopt -u dotglob
