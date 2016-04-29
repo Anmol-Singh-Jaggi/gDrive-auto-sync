@@ -140,9 +140,9 @@ def archive_directory(dir_path):
 
 
 def main():
-    file_list_file_path = "file_list.json"
+    file_list_path = "file_list.json"
 
-    with open(file_list_file_path) as in_file:
+    with open(file_list_path) as in_file:
         file_list = json.load(in_file)
 
     for input_file in file_list:
@@ -169,7 +169,7 @@ def main():
 
     # Write the list to the json file again
     # as it may contain new fileId's for some files.
-    with open(file_list_file_path, "w") as out_file:
+    with open(file_list_path, "w") as out_file:
         json.dump(file_list, out_file, indent=4, sort_keys=True)
 
     print("Done!!")
