@@ -9,7 +9,7 @@ rm -rf "${temp_dir_path}"
 mkdir -p "${temp_dir_path}"
 
 # Execute directory snapshot
-#directory_snapshot "/media/Data/anmol" "${temp_dir_path}/snapshot" "${temp_dir_path}/snapshot_logs"
+directory_snapshot "/media/Data/anmol" "${temp_dir_path}/snapshot" "${temp_dir_path}/snapshot_logs"
 
 # List the manually installed applications
 comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u) > "${temp_dir_path}/manually_installed_apps.txt"
