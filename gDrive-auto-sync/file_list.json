@@ -2,17 +2,17 @@
     {
         "fileId": "0Bw239KLrN7zoSXJGRDR4THVCWlU",
         "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
-        "path": "/home/anmol/.auto-backup-temp/manually_installed_apps.txt"
+        "path": "/tmp/.auto-backup-temp/manually_installed_apps.txt"
     },
     {
         "fileId": "0Bw239KLrN7zoSThIMG1VMkloclU",
         "parentId": "0Bw239KLrN7zoQ2VPaVRvdVpIamM",
-        "path": "/home/anmol/.auto-backup-temp/snapshot"
+        "path": "/tmp/.auto-backup-temp/snapshot"
     },
     {
         "fileId": "0Bw239KLrN7zoa0VVbVN5VndsV2c",
         "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
-        "path": "/home/anmol/.auto-backup-temp/installed_ppa_list.txt"
+        "path": "/tmp/.auto-backup-temp/installed_ppa_list.txt"
     },
     {
         "fileId": "0Bw239KLrN7zoRTJrekUtZ1g0cUk",
@@ -37,7 +37,7 @@
     {
         "fileId": "0Bw239KLrN7zocWpxQ2V3M0NmMkk",
         "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
-        "path": "/home/anmol/.auto-backup-temp/rc"
+        "path": "/tmp/.auto-backup-temp/rc"
     },
     {
         "fileId": "0Bw239KLrN7zoOWRPdWVMS3gwcDA",

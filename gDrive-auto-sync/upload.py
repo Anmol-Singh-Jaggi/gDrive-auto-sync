@@ -6,7 +6,6 @@ import sys
 import json
 import subprocess
 import hashlib
-import tempfile
 
 from apiclient.http import MediaFileUpload
 from api_boilerplate import file_service
@@ -129,7 +128,7 @@ def archive_directory(dir_path):
     :type dir_path: str
     :returns: str -- The path of the archive created.
     """
-    archive_path = os.path.join(tempfile.gettempdir(), dir_path + ".tar.xz")
+    archive_path = os.path.join('/tmp', dir_path + ".tar.xz")
 
     subprocess.check_call(["tar", "-caf", archive_path, "-C", dir_path, "."])
 

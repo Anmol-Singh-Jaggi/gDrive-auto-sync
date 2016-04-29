@@ -34,7 +34,7 @@ def get_credentials():
         Credentials, the obtained credential.
     """
     home_dir = os.path.expanduser('~')
-    credential_dir = os.path.join(home_dir, '.gdrive-credentials')
+    credential_dir = os.path.join(home_dir, '.gdrive-credentials-cache')
     if not os.path.exists(credential_dir):
         os.makedirs(credential_dir)
     credential_path = os.path.join(credential_dir,
