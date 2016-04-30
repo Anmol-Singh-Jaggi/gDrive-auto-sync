@@ -10,11 +10,6 @@ import hashlib
 from apiclient.http import MediaFileUpload
 from api_boilerplate import file_service
 
-from temp_dir_path import get_temp_dir_path
-
-
-temp_dir_path = get_temp_dir_path()
-
 
 def file_exists(fileId):
     """
@@ -134,7 +129,7 @@ def archive_directory(dir_path):
     :returns: str -- The path of the archive created.
     """
     archive_path = os.path.join(
-        temp_dir_path, os.path.basename(dir_path) + ".tar.xz")
+        'temp', os.path.basename(dir_path) + ".tar.xz")
 
     subprocess.check_call(["tar", "-caf", archive_path, "-C", dir_path, "."])
 

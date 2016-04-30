@@ -7,7 +7,7 @@ done
 
 
 # Get the temporary directory's location
-temp_dir_path="$(./temp_dir_path.py)"
+temp_dir_path="temp"
 
 # Remove any existing temp directory
 printf "Removing temp directory ...\n"
