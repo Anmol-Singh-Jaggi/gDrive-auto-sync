@@ -4,7 +4,7 @@ from __future__ import print_function
 import os
 import sys
 import json
-import subprocess
+import tarfile
 import hashlib
 
 from apiclient.http import MediaFileUpload
@@ -129,9 +129,13 @@ def archive_directory(dir_path):
     :returns: str -- The path of the archive created.
     """
     archive_path = os.path.join(
-        'temp', os.path.basename(dir_path) + ".tar.xz")
+        'temp', os.path.basename(dir_path) + ".tar.gz")
 
-    subprocess.check_call(["tar", "-caf", archive_path, "-C", dir_path, "."])
+    # `tar -caf archive_path -C dir_path .`
+    with tarfile.open(archive_path, "w:gz") as tar:
+        tar.add(dir_path, arcname=os.path.basename(dir_path))
+
+    # subprocess.check_call(["tar", "-caf", archive_path, "-C", dir_path, "."])
 
     return archive_path
 
