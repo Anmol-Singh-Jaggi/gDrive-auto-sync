@@ -6,7 +6,6 @@ printf "Running pre-script ...\n\n"
 
 printf "Running directory_snapshot ...\n"
 # Execute directory snapshot
-# Make sure that $temp_dir_path is not a descendant of the input source path !!
 directory_snapshot "/media/Data/anmol" "${temp_dir_path}/snapshot" "${temp_dir_path}/snapshot_logs"
 printf "Done!\n\n"
 
