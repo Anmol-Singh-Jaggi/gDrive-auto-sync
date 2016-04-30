@@ -78,17 +78,17 @@ def list_files():
     return results
 
 
-def update_or_create_file(input_file):
+def update_or_create_file(file_dict):
     """
     Updates the file if it exists already on the Drive, else creates a new one.
-    :param input_file: A dictionary containing the details about the file.
+    :param file_dict: A dictionary containing the details about the file.
     The required keys are 'path', 'fileId' and 'parentId'.
-    :type input_file: dict
+    :type file_dict: dict
     :returns: A dictionary containing the details about the file.
     """
-    file_path = input_file['path']
-    fileId = input_file['fileId']
-    parentId = input_file['parentId']
+    file_path = file_dict['path']
+    fileId = file_dict['fileId']
+    parentId = file_dict['parentId']
 
     if file_exists(fileId):
         return update_file(file_path, fileId)
@@ -96,17 +96,17 @@ def update_or_create_file(input_file):
         return create_file(file_path, parentId)
 
 
-def is_file_modified(input_file):
+def is_file_modified(file_dict):
     """
     Checks whether a file on the Drive is different from its local counterpart.
     It does this by comparing their hash values.
-    :param input_file: A dictionary containing the details about the file.
+    :param file_dict: A dictionary containing the details about the file.
     The required keys are 'path' and 'fileId'.
-    :type input_file: dict
+    :type file_dict: dict
     :returns: bool
     """
-    file_path = input_file['path']
-    fileId = input_file['fileId']
+    file_path = file_dict['path']
+    fileId = file_dict['fileId']
 
     # If the file does not exist on the Drive,
     # then return true.
@@ -135,27 +135,27 @@ def archive_directory(dir_path):
     return archive_path
 
 
-def backup(input_file):
+def backup(file_dict):
     """
     Does the job of uploading file/directory to Drive.
-    :param input_file: A dictionary containing the details about the file.
+    :param file_dict: A dictionary containing the details about the file.
     The required keys are 'path', 'fileId' and 'parentId'.
-    :type input_file: dict
+    :type file_dict: dict
     :returns: None
     """
-    file_path = input_file['path']
+    file_path = file_dict['path']
 
     if os.path.isdir(file_path):
         # If it is a directory, its archive will be uploaded.
-        input_file['path'] = archive_directory(file_path)
+        file_dict['path'] = archive_directory(file_path)
 
-    if is_file_modified(input_file):
-        results = update_or_create_file(input_file)
-        input_file['fileId'] = results['id']
+    if is_file_modified(file_dict):
+        results = update_or_create_file(file_dict)
+        file_dict['fileId'] = results['id']
 
     # Restore the original 'path' to prevent it changing to
     # '/tmp/dir_path.tar.xz' from 'dir_path' in the output json
-    input_file['path'] = file_path
+    file_dict['path'] = file_path
 
 
 def main():
@@ -164,11 +164,11 @@ def main():
     with open(file_list_path) as in_file:
         file_list = json.load(in_file)
 
-    for input_file in file_list:
-        print(str(input_file))
+    for file_dict in file_list:
+        print(str(file_dict))
         sys.stdout.flush()
 
-        backup(input_file)
+        backup(file_dict)
 
     # Write the list to the json file again
     # as it may contain new fileId's for some files.

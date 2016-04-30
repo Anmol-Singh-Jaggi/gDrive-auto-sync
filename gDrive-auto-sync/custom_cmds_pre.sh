@@ -1,15 +1,20 @@
 # Commands to be run before invoking the main script
 
 home="/home/anmol"
+temp_dir_path="temp"
 
-temp_dir_path="/tmp/.auto-backup-temp"
-# Remove any existing directory
+# Remove any existing temp directory
+printf "Removing temp directory ...\n"
 rm -rf "${temp_dir_path}"
-# Make a fresh directory
+printf "Done!\n\n"
+
+# Make a fresh temp directory
 mkdir -p "${temp_dir_path}"
 
+printf "Running directory_snapshot ...\n"
 # Execute directory snapshot
 directory_snapshot "/media/Data/anmol" "${temp_dir_path}/snapshot" "${temp_dir_path}/snapshot_logs"
+printf "Done!\n\n"
 
 # List the manually installed applications
 comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u) > "${temp_dir_path}/manually_installed_apps.txt"
