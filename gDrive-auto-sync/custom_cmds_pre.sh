@@ -1,18 +1,12 @@
 # Commands to be run before invoking the main script
 
-home="/home/anmol"
-temp_dir_path="temp"
 
-# Remove any existing temp directory
-printf "Removing temp directory ...\n"
-rm -rf "${temp_dir_path}"
-printf "Done!\n\n"
+printf "Running pre-script ...\n\n"
 
-# Make a fresh temp directory
-mkdir -p "${temp_dir_path}"
 
 printf "Running directory_snapshot ...\n"
 # Execute directory snapshot
+# Make sure that $temp_dir_path is not a descendant of the input source path !!
 directory_snapshot "/media/Data/anmol" "${temp_dir_path}/snapshot" "${temp_dir_path}/snapshot_logs"
 printf "Done!\n\n"
 
@@ -21,6 +15,8 @@ comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-
 
 # List the PPA's installed
 grep -RoPish "ppa.launchpad.net/[^/]+/[^/ ]+" /etc/apt | sort -u | sed -r 's/\.[^/]+\//:/' > "${temp_dir_path}/installed_ppa_list.txt"
+
+home="/home/anmol"
 
 # Move Google Chrome's config out due to its large size
 mv "${home}/.config/google-chrome" "${home}/.config.google-chrome"
@@ -34,3 +30,6 @@ shopt -s dotglob
 # Copy the rc files in the temporary folder
 cp "${home}"/*rc "${rc_path}"
 shopt -u dotglob
+
+
+printf "Pre-script execution complete!\n\n"
