@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+
+# Source the environment variables required for notify-send to work.
+. /home/anmol/.notify_send_env
+
+
 for i in `seq 1 3`;
 do
  notify-send "gDrive auto-backup started!!"

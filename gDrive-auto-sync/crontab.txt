@@ -21,11 +21,10 @@
 #
 # m h  dom mon dow   command
 
-# For 'mkdir'
-PATH=/home/anmol/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
-# For 'notify-send'
-DISPLAY=:0.0
+
+PATH=/home/anmol/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
 
 # Run at 7:30 pm every Saturday
-30 19 * * Sat cd /media/Data/anmol/coding/github/gDrive-auto-sync/gDrive-auto-sync && ./run.sh 2> /home/anmol/cron.log
+30 19 * * Sat cd /home/anmol/Data/anmol/coding/github/gDrive-auto-sync/gDrive-auto-sync && ./run.sh 2> logs/cron.log
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from __future__ import print_function
 
 import os
@@ -131,10 +131,10 @@ def archive_directory(dir_path):
     archive_path = os.path.join(
         'temp', os.path.basename(dir_path) + ".tar.gz")
 
-    # `tar -caf archive_path -C dir_path .`
     with tarfile.open(archive_path, "w:gz") as tar:
         tar.add(dir_path, arcname=os.path.basename(dir_path))
 
+    # `tar -caf archive_path -C dir_path .`
     # subprocess.check_call(["tar", "-caf", archive_path, "-C", dir_path, "."])
 
     return archive_path
