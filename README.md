@@ -20,11 +20,11 @@ Automatically backup files to your Google Drive account periodically.
  - Make sure that the main script is executable - `chmod +x ./run.sh`.
  - For manually running it, just cd into the directory and execute the main script - `./run.sh`.  
    If you are running it for the first time, you will be asked to authenticate yourself with Google.
- - For scheduling it using [`cron`](https://en.wikipedia.org/wiki/Cron):
+ - For scheduling it using [cron](https://en.wikipedia.org/wiki/Cron):
    - Modify the contents of *`crontab.txt`* as per your needs.
    - Execute `crontab -e` to open the crontab edit buffer.
    - Copy the contents of *`crontab.txt`* in the buffer and save it.
-   - ***TIP:*** In case you need to execute [`notify-send`](http://ss64.com/bash/notify-send.html) from cron, follow the steps given [here](https://anmolsinghjaggi.wordpress.com/2016/05/11/notify-send-in-ubuntu-16-lts/).
+   - ***TIP:*** In case you need to execute [notify-send](http://ss64.com/bash/notify-send.html) from cron, follow the steps given [here](https://anmolsinghjaggi.wordpress.com/2016/05/11/notify-send-in-ubuntu-16-lts/).
 
 **To-Do:**
  - Add support for uploading contents of a folder recursively without archiving.
