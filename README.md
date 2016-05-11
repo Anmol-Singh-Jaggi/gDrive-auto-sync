@@ -24,7 +24,7 @@ Automatically backup files to your Google Drive account periodically.
    - Modify the contents of *`crontab.txt`* as per your needs.
    - Execute `crontab -e` to open the crontab edit buffer.
    - Copy the contents of *`crontab.txt`* in the buffer and save it.
-   - In case you need to execute [`notify-send`](http://ss64.com/bash/notify-send.html) from cron, follow the steps given [here](http://unix.stackexchange.com/questions/111188/using-notify-send-with-cron).
+   - In case you need to execute [`notify-send`](http://ss64.com/bash/notify-send.html) from cron, follow the steps given [here](https://anmolsinghjaggi.wordpress.com/2016/05/11/notify-send-in-ubuntu-16-lts/).
 
 **To-Do:**
  - Add support for uploading contents of a folder recursively without archiving.
