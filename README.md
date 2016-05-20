@@ -14,7 +14,7 @@ Automatically backup files to your Google Drive account periodically.
     - Click on the *Download JSON* link and save it as *client_secrets.json* in your working directory.
  - Replace the value of the *APPLICATION_NAME* variable in the *`api_boilerplate.py`* file with the name of the project created in the previous step.
  - Add the details regarding the files to be uploaded in the *`file_list.json`* file. For new files, keep the `fileId` empty and `parentId` as the ID of the Drive directory in which the file has to be inserted.  
-   The ID of a directory can be found be visiting that directory on Google Drive and looking at the alphanumeric string in the URL.  
+   The ID of a directory can be found by visiting that directory on Google Drive and looking at the alphanumeric string in the URL.  
    ![Image highlighting the ID of a directory on Google Drive.](gDrive-auto-sync/screenshots/gdrive_directory_id.png?raw=true "Finding Directory ID on Google Drive")
  - Modify *`custom_cmds_pre.sh`* and *`custom_cmds_post.sh`* as per your needs.
  - Make sure that the main script is executable - `chmod +x ./run.sh`.
