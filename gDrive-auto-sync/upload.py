@@ -34,7 +34,7 @@ def create_file(file_path, parentId=None):
     :param file_path: The path of the source file on local storage.
     :type file_path: str
     :param parentId: The ID of the directory in which the file has to be
-    created. If it is None, the file will be created in the root directory.
+     created. If it is None, the file will be created in the root directory.
     :type parentId: str or None
     :returns: A dictionary containing the ID of the file created.
     """
@@ -82,7 +82,7 @@ def update_or_create_file(file_dict):
     """
     Updates the file if it exists already on the Drive, else creates a new one.
     :param file_dict: A dictionary containing the details about the file.
-    The required keys are 'path', 'fileId' and 'parentId'.
+     The required keys are 'path', 'fileId' and 'parentId'.
     :type file_dict: dict
     :returns: A dictionary containing the details about the file.
     """
@@ -101,7 +101,7 @@ def is_file_modified(file_dict):
     Checks whether a file on the Drive is different from its local counterpart.
     It does this by comparing their hash values.
     :param file_dict: A dictionary containing the details about the file.
-    The required keys are 'path' and 'fileId'.
+     The required keys are 'path' and 'fileId'.
     :type file_dict: dict
     :returns: bool
     """
@@ -144,7 +144,7 @@ def backup(file_dict):
     """
     Does the job of uploading file/directory to Drive.
     :param file_dict: A dictionary containing the details about the file.
-    The required keys are 'path', 'fileId' and 'parentId'.
+     The required keys are 'path', 'fileId' and 'parentId'.
     :type file_dict: dict
     :returns: None
     """
