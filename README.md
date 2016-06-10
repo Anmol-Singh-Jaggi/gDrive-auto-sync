@@ -2,6 +2,10 @@
 
 Automatically backup files to your Google Drive account periodically.
 
+#### Demo:  
+
+[![Project demo video screenshot](gDrive-auto-sync/screenshots/Demo.jpg?raw=true)](http://www.youtube.com/watch?v=q40_A01v470)
+
 **Dependencies:**
  - `pip install google-api-python-client`
 
