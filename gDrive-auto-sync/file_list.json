@@ -20,6 +20,11 @@
         "path": "/home/anmol/bin"
     },
     {
+        "fileId": "",
+        "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
+        "path": "/home/anmol/Documents"
+    },
+    {
         "fileId": "0Bw239KLrN7zoeXNHUE1TVGdYM3M",
         "parentId": "0Bw239KLrN7zoZmxmd09RYTFJTkk",
         "path": "/home/anmol/.config"
