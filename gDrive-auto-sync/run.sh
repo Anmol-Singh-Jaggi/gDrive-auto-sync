@@ -2,7 +2,7 @@
 
 
 # Source the environment variables required for notify-send to work.
-. /home/anmol/.notify_send_env
+. /home/anmol/.env_vars
 
 
 for i in `seq 1 3`;
