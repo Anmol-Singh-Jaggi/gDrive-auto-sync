@@ -6,7 +6,7 @@ printf "Running pre-script ...\n\n"
 
 printf "Running directory_snapshot ...\n"
 # Execute directory snapshot
-directory_snapshot "/home/anmol/Data/anmol" "${temp_dir_path}/snapshot" "${temp_dir_path}/snapshot_logs"
+directory-snapshot "/home/anmol/Data/anmol" "${temp_dir_path}/snapshot" "${temp_dir_path}/snapshot_logs"
 printf "Done!\n\n"
 
 # List the manually installed applications
